@@ -29,7 +29,7 @@ public class PatronService {
         return modelMapper.map(repository.save(patronEntity), Patron.class);
     }
 
-    public Patron createPatron(Patron patron){
+    public Patron registerPatron(Patron patron){
         String patronRegId = getPatronRegId();
         patron.setPatronRegId(patronRegId);
         return save(patron);

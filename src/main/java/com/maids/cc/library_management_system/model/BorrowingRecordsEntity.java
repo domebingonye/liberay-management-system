@@ -18,13 +18,13 @@ public class BorrowingRecordsEntity {
     @GenericGenerator(name = "native", strategy = "native")
     private Long id;
 
-    @Column(name = "PATRON_ID")
+    @Column(name = "PATRON_ID", nullable = false)
     private Long patronId;
 
-    @Column(name = "BOOK_ID")
+    @Column(name = "BOOK_ID", nullable = false)
     private Long bookId;
 
-    @Column(name = "BORROW")
+    @Column(name = "BORROW", nullable = false)
     private Boolean borrow;
 
     @Column(name = "RETURNED")

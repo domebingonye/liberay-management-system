@@ -18,15 +18,15 @@ public class PatronEntity {
     @GenericGenerator(name = "native", strategy = "native")
     private Long id;
 
-    @Column(name = "NAME")
+    @Column(name = "NAME", nullable = false)
     private String name;
 
-    @Column(name = "CONTACT")
+    @Column(name = "CONTACT", nullable = false)
     private String contact;
 
-    @Column(name = "INFORMATION")
+    @Column(name = "INFORMATION", nullable = false)
     private String information;
 
-    @Column(name = "PATRON_REG_ID")
+    @Column(name = "PATRON_REG_ID", nullable = false)
     private String patronRegId;
 }

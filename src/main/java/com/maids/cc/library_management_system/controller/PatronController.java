@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -18,17 +19,17 @@ public class PatronController {
     private final PatronService patronService;
 
     @PostMapping
-    public ResponseEntity<Patron> createBook(@RequestBody Patron patron) {
-        return ResponseEntity.ok(patronService.createPatron(patron));
+    public ResponseEntity<Patron> registerPatron(@Valid @RequestBody Patron patron) {
+        return ResponseEntity.ok(patronService.registerPatron(patron));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Patron> updatePatron(@PathVariable final Long id, @RequestBody Patron patron) {
+    public ResponseEntity<Patron> updatePatronById(@PathVariable final Long id, @Valid @RequestBody Patron patron) {
         return ResponseEntity.ok(patronService.updatePatron(id, patron));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Patron> getBookById(@PathVariable final Long id) {
+    public ResponseEntity<Patron> getPatronById(@PathVariable final Long id) {
         return ResponseEntity.ok(patronService.findById(id));
     }
 
@@ -38,7 +39,7 @@ public class PatronController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<BaseResponse> deleteBookById(@PathVariable final Long id) {
+    public ResponseEntity<BaseResponse> deletePatronById(@PathVariable final Long id) {
         return ResponseEntity.ok(patronService.deleteById(id));
     }
 }

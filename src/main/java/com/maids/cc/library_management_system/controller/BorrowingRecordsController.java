@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api/v1/borrowing-record")
@@ -20,7 +22,7 @@ public class BorrowingRecordsController {
     }
 
     @PutMapping
-    public ResponseEntity<BorrowingRecords> updateBorrowingRecordsById(@PathVariable final Long id, @RequestBody BorrowingRecords borrowingRecords) {
+    public ResponseEntity<BorrowingRecords> updateBorrowingRecordsById(@PathVariable final Long id, @Valid @RequestBody BorrowingRecords borrowingRecords) {
         return ResponseEntity.ok(borrowingRecordsService.updateBorrowingRecordsById(id, borrowingRecords));
     }
 }

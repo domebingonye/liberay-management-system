@@ -29,13 +29,13 @@ public class BookService {
         return modelMapper.map(repository.save(bookEntity), Book.class);
     }
 
-    public Book createBook(Book book){
+    public Book registerBook(Book book){
         String bookRegId = getBookRegId();
         book.setBookRegId(bookRegId);
         return save(book);
     }
 
-    public Book updateBook(Long id, Book book){
+    public Book updateBookById(Long id, Book book){
         Book res = findById(id);
         if(ObjectUtils.isEmpty(res)) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No record found for " + id);
         book.setId(id);

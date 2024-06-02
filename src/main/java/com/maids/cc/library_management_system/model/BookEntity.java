@@ -20,13 +20,13 @@ public class BookEntity {
     @GenericGenerator(name = "native", strategy = "native")
     private Long id;
 
-    @Column(name = "TITLE")
+    @Column(name = "TITLE", nullable = false)
     private String title;
 
-    @Column(name = "AUTHOR")
+    @Column(name = "AUTHOR", nullable = false)
     private String author;
 
-    @Column(name = "PUBLICATION")
+    @Column(name = "PUBLICATION", nullable = false)
     private String publication;
 
     @Column(name = "YEAR")
@@ -35,6 +35,6 @@ public class BookEntity {
     @Column(name = "ISBN")
     private String isbn;
 
-    @Column(name = "BOOK_REG_ID")
+    @Column(name = "BOOK_REG_ID", nullable = false)
     private String bookRegId;
 }
