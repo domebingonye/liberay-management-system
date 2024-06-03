@@ -11,13 +11,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Data
 @NoArgsConstructor
 @Table(name = "BORROWING_RECORDS")
-public class BorrowingRecordsEntity {
-    @Id
-    @Column(name = "ID", nullable = false, insertable = false, updatable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
-    private Long id;
-
+public class BorrowingRecordsEntity extends AuditModel{
     @Column(name = "PATRON_ID", nullable = false)
     private Long patronId;
 

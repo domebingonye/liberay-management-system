@@ -11,13 +11,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Data
 @NoArgsConstructor
 @Table(name = "PATRON")
-public class PatronEntity {
-    @Id
-    @Column(name = "ID", nullable = false, insertable = false, updatable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
-    private Long id;
-
+public class PatronEntity extends AuditModel{
     @Column(name = "NAME", nullable = false)
     private String name;
 

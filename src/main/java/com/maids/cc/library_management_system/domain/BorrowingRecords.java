@@ -1,9 +1,8 @@
 package com.maids.cc.library_management_system.domain;
 
-import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-import javax.validation.constraints.NotNull;
 
 @Data
 @Builder

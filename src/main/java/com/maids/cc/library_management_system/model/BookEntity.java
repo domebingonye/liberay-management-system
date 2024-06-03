@@ -13,13 +13,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @Table(name = "BOOK")
-public class BookEntity {
-    @Id
-    @Column(name = "ID", nullable = false, insertable = false, updatable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
-    private Long id;
-
+public class BookEntity extends AuditModel{
     @Column(name = "TITLE", nullable = false)
     private String title;
 
