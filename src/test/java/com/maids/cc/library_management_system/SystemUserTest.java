@@ -18,7 +18,7 @@ public class SystemUserTest {
 
     @Test
     public void findByUsername(){
-        SystemUser systemUser = systemUserService.findByEmail("domebingonye@gmail.com");
+        SystemUser systemUser = systemUserService.findByUsername("yuureabosi");
         Assert.assertTrue(!ObjectUtils.isEmpty(systemUser));
     }
 }

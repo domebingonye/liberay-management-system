@@ -16,7 +16,7 @@ public class SystemUserEntity extends AuditModel {
     @Column(name = "EMAIL", nullable = false, unique = true)
     private String email;
 
-    @Lob
+//    @Lob
     @Column(name = "PASSWORD")
     private String password;
 
